@@ -56,4 +56,19 @@ public class Enemy : MonoBehaviour
         pos = tempPos;
     }
 
+    private void OnCollisionEnter(Collision coll)
+    {
+        GameObject otherGO = coll.gameObject;
+        if (otherGO.tag == "ProjectileHero")
+        {
+            Destroy(otherGO); //Destroy the projectile
+            Destroy(gameObject); //Destroys the enemy gameobject
+        }
+        else
+        {
+            print("Enermy hit by non-ProjectileHero: " + otherGO.name);
+        }
+    }
+
+
 }

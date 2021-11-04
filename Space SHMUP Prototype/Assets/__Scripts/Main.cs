@@ -50,7 +50,7 @@ public class Main : MonoBehaviour
 
     public void Restart()
     {
-        SceneManager.LoadScene("_Scene_0");
+        SceneManager.LoadScene("_Scene_1");
     }
 
     // Start is called before the first frame update
