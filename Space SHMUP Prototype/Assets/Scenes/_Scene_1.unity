@@ -445,6 +445,12 @@ MonoBehaviour:
   - {fileID: 865648675740532677, guid: 5b2fca35ff8df5e4590bd2ac0e516c86, type: 3}
   - {fileID: 485655884359405071, guid: ca619f2bc88bf964699fc92b6108b8b9, type: 3}
   - {fileID: 1851675914850313019, guid: 9ee6b93342ea3e44882660f60a41c9dd, type: 3}
+  enemyMats:
+  - {fileID: 2100000, guid: 30479aa736a475348a394e6c9f21e7b9, type: 2}
+  - {fileID: 2100000, guid: 9e560e18e45f9744195ecf8b5e3c5e78, type: 2}
+  - {fileID: 2100000, guid: 702724d84e02ad544af65cbd018b63dd, type: 2}
+  newMat: {fileID: 0}
+  matName: 
   enemySpawnPerSecond: 0.5
   enemyDefaultPadding: 1.5
 --- !u!114 &963194230
