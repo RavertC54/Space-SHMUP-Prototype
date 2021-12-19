@@ -61,8 +61,16 @@ public class Enemy : MonoBehaviour
         GameObject otherGO = coll.gameObject;
         if (otherGO.tag == "ProjectileHero")
         {
-            Destroy(otherGO); //Destroy the projectile
-            Destroy(gameObject); //Destroys the enemy gameobject
+            if (health == 0)
+            {
+                Destroy(otherGO); //Destroy the projectile
+                Destroy(gameObject); //Destroys the enemy gameobject
+            }
+            else
+            {
+                health -= 10;
+            }
+            
         }
         else
         {

@@ -14,7 +14,8 @@ public class Main : MonoBehaviour
     public string matName;
     public float enemySpawnPerSecond = 0.5f;
     public float enemyDefaultPadding = 1.5f;
-    
+
+
 
     private BoundsCheck bndCheck;
 
@@ -29,13 +30,26 @@ public class Main : MonoBehaviour
     {
         int ndx = Random.Range(0, prefabEnemies.Length);
         GameObject go = Instantiate<GameObject>(prefabEnemies[ndx]);
-        
+
+        int matNdx = Random.Range(0, enemyMats.Length);
+
+        string matName = "";
+        if (matNdx == 0)
+        {
+            matName = "EnemyMat_0";
+        }
+        if (matNdx == 1)
+        {
+            matName = "EnemyMat_1";
+        }
+        if (matNdx == 2)
+        {
+            matName = "EnemyMat_2";
+        }
+
+        Material newMat = Resources.Load(matName, typeof(Material)) as Material;
+
         go.GetComponent<Renderer>().material = newMat;
-
-        //Assigns a material named "Assets/Resources/DEV_Orange" to the object.
-        //Material newMat = Resources.Load("DEV_Orange", typeof(Material)) as Material;
-        //gameObject.renderer.material = newMat;
-
 
         float enemyPadding = enemyDefaultPadding;
         if (go.GetComponent<BoundsCheck>() != null)
@@ -69,24 +83,8 @@ public class Main : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        int matNdx = Random.Range(0, enemyMats.Length);
 
-        string matName = "";
-        if (matNdx == 0)
-        {
-            matName = "EnemyMat_0";
-
-        }
-        if (matNdx == 1)
-        {
-            matName = "EnemyMat_1";
-        }
-        if (matNdx == 2)
-        {
-            matName = "EnemyMat_2";
-        }
-
-        Material newMat = Resources.Load(matName, typeof(Material)) as Material;
+       
     }
 
     // Update is called once per frame
